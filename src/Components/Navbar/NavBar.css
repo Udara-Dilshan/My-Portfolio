@@ -1,0 +1,139 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 170px;
+    position: relative;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 60px;
+    font-size: 20px;
+}
+
+.nav-connect {
+    padding: 5px 25px;
+    border-radius: 50px;
+    background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
+    font-size: 18px;
+    cursor: pointer;
+    transform: 0.5s;
+}
+
+.nav-connect:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #FF9800 0%, #FFC107 100%);
+    color: black;
+}
+
+.nav-menu li {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.nav-menu li img {
+    display: flex;
+    margin: auto;
+}
+
+.anchor-link {
+    text-decoration: none;
+    color: white;
+}
+
+.anchor-link:hover {
+    color: yellow;
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+
+/* Mobile Menu Open/Close */
+.nav-mob-close {
+    display: none;
+}
+
+.nav-mob-open {
+    display: none;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1024px) {
+    .navbar {
+        margin: 20px 50px;
+    }
+    .nav-menu {
+        gap: 40px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        margin: 20px 50px;
+    }
+    .nav-connect {
+        display: none; /* Hide connect button on mobile */
+    }
+
+    .nav-mob-open {
+        display: block;
+        position: fixed;
+        right: 30px;
+        top: 20px;
+        z-index: 3;
+    }
+
+    .nav-mob-close {
+        display: none;
+        position: absolute;
+        top: 30px;
+        left: 290px;
+        width: 30px;
+        cursor: pointer;
+    }
+
+    .nav-menu {
+        position: fixed;
+        flex-direction: column;
+        align-items: start;
+        top: 0;
+        gap: 30px;
+        background-color: #1f0016;
+        width: 350px;
+        height: 100%;
+        z-index: 2;
+        transition: right 0.5s;
+        right: -350px;
+        padding-top: 80px;
+    }
+
+    .nav-menu li {
+        font-size: 30px;
+        padding-left: 100px;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .nav-menu li img {
+        margin-left: 10px;
+    }
+
+    .nav-menu.open {
+        right: 0; /* Show menu when it's open */
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-menu li {
+        font-size: 25px;
+        padding-left: 80px;
+    }
+    .nav-menu {
+        width: 100%;
+    }
+}
